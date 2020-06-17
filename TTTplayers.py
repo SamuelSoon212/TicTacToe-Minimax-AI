@@ -44,9 +44,8 @@ class HardBotPlayer:
       best = {'position':None, 'score':math.inf}
     for possible_move in game.available_moves():
       game.make_move(present_player, possible_move)
-      simulation_score = self.minimax(game, other_player) # Recursion
+      simulation_score = self.minimax(game, other_player) 
 
-      # Undo last move
       game.board[possible_move] = ' '
       game.winner = None
       simulation_score['position'] = possible_move
